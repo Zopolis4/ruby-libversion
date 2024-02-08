@@ -1,0 +1,10 @@
+# Ignore compiled C extension files
+ext/libversion/*.o
+ext/libversion/*.so
+
+# Ignore build artifacts
+ext/libversion/Makefile
+ext/libversion/mkmf.log
+
+# Ignore gem files
+*.gem
