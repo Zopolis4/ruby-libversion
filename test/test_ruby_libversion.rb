@@ -4,7 +4,7 @@ require 'ruby_libversion'
 # These test cases are taken from here:
 # https://github.com/repology/libversion/blob/master/tests/compare_test.c
 # The copyright notice from that file is reproduced here:
-# Copyright (c)) 2017-2018 Dmitry Marakasov <amdmi3@amdmi3.ru>
+# Copyright (c) 2017-2018 Dmitry Marakasov <amdmi3@amdmi3.ru>
 class RubyLibversionTest < Minitest::Test
   def test_equality
     assert_equal(0, Libversion.version_compare2('0', '0'))
