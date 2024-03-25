@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.version    = '1.0.0'
   spec.license    = 'MIT'
   spec.author     = 'Maximilian Downey Twiss'
-  spec.email      = 'creatorsmithmdt@.com'
+  spec.email      = 'creatorsmithmdt@gmail.com'
   spec.homepage   = 'https://github.com/Zopolis4/ruby-libversion'
   spec.files      = `git ls-files`.split("\n")
   spec.extensions = 'ext/libversion/extconf.rb'
