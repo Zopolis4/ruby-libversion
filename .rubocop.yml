@@ -1,0 +1,27 @@
+AllCops:
+  NewCops: enable
+
+Gemspec/RequireMFA:
+  Enabled: false
+
+# TODO: Find out what ruby version we actually require and then remove this.
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+Naming/FileName:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: False
+
+Style/FrozenStringLiteralComment:
+  Enabled: False
+
+Style/MutableConstant:
+  Enabled: False
