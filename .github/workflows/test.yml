@@ -1,0 +1,30 @@
+name: Test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download source
+        uses: actions/checkout@v5
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+      - name: Install dependencies
+        run: gem install rake-compiler
+      - name: Install libversion  # Hopefully this will get added as an Ubuntu/Debian package.
+        working-directory: ${{ runner.temp }}
+        run: |
+          git clone --depth 1 -b 3.0.3 https://github.com/repology/libversion
+          cd libversion
+          mkdir build
+          cd build
+          cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+          make -j "$(nproc)"
+          sudo make install
+      - name: Build and install ruby-libversion
+        run: |
+          gem build ruby-libversion
+          gem install -l ruby-libversion
+      - name: Run tests
+        run: rake test
