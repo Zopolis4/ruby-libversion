@@ -12,6 +12,12 @@ jobs:
           ruby-version: '3.4'
       - name: Install dependencies
         run: gem install rake-compiler
+      - name: Build and install ruby-libversion (Ruby fallback)
+        run: |
+          gem build ruby-libversion
+          gem install -l ruby-libversion
+      - name: Run tests (Ruby fallback)
+        run: rake test
       - name: Install libversion  # Hopefully this will get added as an Ubuntu/Debian package.
         working-directory: ${{ runner.temp }}
         run: |
@@ -22,9 +28,9 @@ jobs:
           cmake .. -DCMAKE_INSTALL_PREFIX=/usr
           make -j "$(nproc)"
           sudo make install
-      - name: Build and install ruby-libversion
+      - name: Build and install ruby-libversion (native extension)
         run: |
           gem build ruby-libversion
           gem install -l ruby-libversion
-      - name: Run tests
+      - name: Run tests (native extension)
         run: rake test

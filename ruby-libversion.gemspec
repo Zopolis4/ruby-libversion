@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec|
   spec.name       = 'ruby-libversion'
   spec.summary    = 'Ruby bindings for libversion'
-  spec.version    = '1.0.0'
+  spec.version    = '1.1.0'
   spec.license    = 'MIT'
   spec.author     = 'Maximilian Downey Twiss'
   spec.email      = 'creatorsmithmdt@gmail.com'

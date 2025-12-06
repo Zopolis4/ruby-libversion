@@ -17,6 +17,12 @@ Metrics:
 Naming/FileName:
   Enabled: false
 
+Naming/HeredocDelimiterNaming:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: False
+
 Style/Documentation:
   Enabled: False
 
@@ -24,4 +30,10 @@ Style/FrozenStringLiteralComment:
   Enabled: False
 
 Style/MutableConstant:
+  Enabled: False
+
+Style/RedundantReturn:
+  Enabled: False
+
+Style/RedundantSelf:
   Enabled: False
